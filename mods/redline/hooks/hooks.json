@@ -1,0 +1,4 @@
+{
+  "description": "Boundary observation: records a classifier stop or a policy denial as one local JSONL row with its context; resumes nothing",
+  "modules": ["./register.ts"]
+}

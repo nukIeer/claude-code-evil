@@ -10,6 +10,7 @@ source, published as it is built into the binary.
 | [`sec-default`](sec-default) | Keeps an organization's classic hooks, prompt content, managed settings and tool policy out of reach of the plugins a person installs; adds no policy of its own. | Outermost, on a machine with managed settings or for a Team or Enterprise organization, unless managed `prependPlugins` says otherwise |
 | [`diff`](diff) | `/diff`: the session's uncommitted changes in a pane beside the transcript, file by file with their hunks, refreshed as Claude edits files and runs commands. | Built in |
 | [`telemetry`](telemetry) | Adds `$.telemetry` (`log`, `mark`) in the `engine.create` fold so a plugin can record an event as a first-party analytics row; sends nothing wherever Claude Code's analytics are off. | Built in |
+| [`redline`](redline) | Boundary research: records a safety-classifier stop or a policy denial as one local JSONL row with its context, so a false positive can be reported with evidence. Records only — never resumes, rewinds or retries the stop. | Community, opt-in via `--plugin-dir mods/redline` |
 
 Each folder is a complete plugin: `.claude-plugin/plugin.json`, a
 `hooks/hooks.json` naming the module, and TypeScript under `hooks/` typed

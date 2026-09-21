@@ -1,0 +1,8 @@
+{
+  "name": "redline",
+  "version": "0.1.0",
+  "description": "An observation mod for boundary research: records when a turn is stopped by a safety classifier or a tool call is denied by policy, as one local JSONL row with its surrounding context, so a false positive can be reported with evidence. It never resumes, rewinds, retries or otherwise works around the stop it records.",
+  "author": {
+    "name": "claude-code-evil contributors"
+  }
+}
