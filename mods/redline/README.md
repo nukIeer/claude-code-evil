@@ -65,8 +65,11 @@ a failure in it can never disturb the turn or the tool call it observes.
 ## Status
 
 Wired against the engine's own event types (`mods/types/claude-code.d.ts`) and
-typechecks under `mods/tsconfig.json`. Tests are still to be written — see
-`tests/`.
+typechecks under `mods/tsconfig.json`. `tests/register.test.ts` covers both
+hooks: what each records, that a normal answer and an allowed call record
+nothing, that the turn result and the decision are handed on unchanged, that a
+failed write never disturbs what it was recording, and that a row's context
+window is bounded.
 
 ## Structure
 
@@ -75,7 +78,8 @@ typechecks under `mods/tsconfig.json`. Tests are still to be written — see
     ├── hooks/hooks.json             names the hook module
     ├── hooks/register.ts            the two pass-through recorder hooks
     ├── hooks/record.ts              the recorder: reads $, appends a JSONL row
-    ├── tests/                       a mod's tests live here
+    ├── tests/register.test.ts       covers both hooks
+    ├── tests/fixtures/world.ts      the mocked world beneath the mod
     └── README.md
 
 ## Testing
